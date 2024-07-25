@@ -22,7 +22,7 @@ func New(ctrl *rating.Controller) *Handler {
 }
 
 // Handle handles PUT and GET /rating requests
-func (h *Handler) Hande(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) Handle(w http.ResponseWriter, r *http.Request) {
 	recordID := model.RecordID(r.FormValue("id"))
 	if recordID == "" {
 		w.WriteHeader(http.StatusBadRequest)
