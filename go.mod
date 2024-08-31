@@ -3,12 +3,14 @@ module github.com/allancordeiro/movieapp
 go 1.22.1
 
 require (
+	github.com/go-sql-driver/mysql v1.8.1
 	github.com/hashicorp/consul/api v1.29.2
 	google.golang.org/grpc v1.56.3
 	google.golang.org/protobuf v1.33.0
 )
 
 require (
+	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
