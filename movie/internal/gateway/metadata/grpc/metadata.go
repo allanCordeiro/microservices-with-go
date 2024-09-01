@@ -2,11 +2,11 @@ package grpc
 
 import (
 	"context"
-	"github.com/allancordeiro/movieapp/gen"
-	"github.com/allancordeiro/movieapp/internal/grpcutil"
-	"github.com/allancordeiro/movieapp/metadata/pkg"
-	pkgmodel "github.com/allancordeiro/movieapp/metadata/pkg/model"
-	"github.com/allancordeiro/movieapp/pkg/discovery"
+	"github.com/allancordeiro/microservices-with-go/gen"
+	"github.com/allancordeiro/microservices-with-go/internal/grpcutil"
+	"github.com/allancordeiro/microservices-with-go/metadata/pkg"
+	pkgmodel "github.com/allancordeiro/microservices-with-go/metadata/pkg/model"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery"
 )
 
 // Gateway defines a movie metadata GRPC gateway

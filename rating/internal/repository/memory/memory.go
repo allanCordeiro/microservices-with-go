@@ -3,8 +3,8 @@ package memory
 import (
 	"context"
 
-	"github.com/allancordeiro/movieapp/rating/internal/repository"
-	model "github.com/allancordeiro/movieapp/rating/pkg"
+	"github.com/allancordeiro/microservices-with-go/rating/internal/repository"
+	model "github.com/allancordeiro/microservices-with-go/rating/pkg"
 )
 
 // Repository defines a rating repository

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/allancordeiro/movieapp/pkg/discovery"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery"
 )
 
 type serviceName string

@@ -4,8 +4,8 @@ import (
 	"context"
 	"sync"
 
-	"github.com/allancordeiro/movieapp/metadata/internal/repository"
-	model "github.com/allancordeiro/movieapp/metadata/pkg"
+	"github.com/allancordeiro/microservices-with-go/metadata/internal/repository"
+	model "github.com/allancordeiro/microservices-with-go/metadata/pkg"
 )
 
 // Repository defines a memory movie metadata repository

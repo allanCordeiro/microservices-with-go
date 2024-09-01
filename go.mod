@@ -1,4 +1,4 @@
-module github.com/allancordeiro/movieapp
+module github.com/allancordeiro/microservices-with-go
 
 go 1.22.1
 
@@ -7,6 +7,7 @@ require (
 	github.com/hashicorp/consul/api v1.29.2
 	google.golang.org/grpc v1.56.3
 	google.golang.org/protobuf v1.33.0
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (

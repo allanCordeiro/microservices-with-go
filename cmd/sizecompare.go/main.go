@@ -5,8 +5,8 @@ import (
 	"encoding/xml"
 	"fmt"
 
-	"github.com/allancordeiro/movieapp/gen"
-	model "github.com/allancordeiro/movieapp/metadata/pkg"
+	"github.com/allancordeiro/microservices-with-go/gen"
+	model "github.com/allancordeiro/microservices-with-go/metadata/pkg"
 	"google.golang.org/protobuf/proto"
 )
 

@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/allancordeiro/movieapp/metadata/internal/controller/metadata"
-	"github.com/allancordeiro/movieapp/metadata/internal/repository"
+	"github.com/allancordeiro/microservices-with-go/metadata/internal/controller/metadata"
+	"github.com/allancordeiro/microservices-with-go/metadata/internal/repository"
 )
 
 // Handler defines a movie metadata HTTP handler.

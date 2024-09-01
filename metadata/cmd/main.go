@@ -2,29 +2,37 @@ package main
 
 import (
 	"context"
-	"flag"
 	"fmt"
-	"github.com/allancordeiro/movieapp/gen"
-	grpchandler "github.com/allancordeiro/movieapp/metadata/internal/handler/grpc"
+	"github.com/allancordeiro/microservices-with-go/gen"
+	grpchandler "github.com/allancordeiro/microservices-with-go/metadata/internal/handler/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
+	"gopkg.in/yaml.v3"
 	"log"
 	"net"
+	"os"
 	"time"
 
-	"github.com/allancordeiro/movieapp/metadata/internal/controller/metadata"
-	"github.com/allancordeiro/movieapp/metadata/internal/repository/memory"
-	"github.com/allancordeiro/movieapp/pkg/discovery"
-	"github.com/allancordeiro/movieapp/pkg/discovery/consul"
+	"github.com/allancordeiro/microservices-with-go/metadata/internal/controller/metadata"
+	"github.com/allancordeiro/microservices-with-go/metadata/internal/repository/memory"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery/consul"
 )
 
 const serviceName = "metadata"
 
 func main() {
-	var port int
-	flag.IntVar(&port, "port", 8081, "API handler port")
-	flag.Parse()
-	log.Printf("starting the movie metadata service on port %d\n", port)
+	f, err := os.Open("configs/base.yaml")
+	if err != nil {
+		panic(err)
+	}
+	var cfg config
+	if err := yaml.NewDecoder(f).Decode(&cfg); err != nil {
+		panic(err)
+	}
+	port := cfg.APIConfig.Port
+	log.Printf("starting the movie metadata service on port %s\n", port)
+
 	registry, err := consul.NewRegistry("localhost:8500")
 	if err != nil {
 		panic(err)
@@ -32,7 +40,7 @@ func main() {
 
 	ctx := context.Background()
 	instanceID := discovery.GenerateInstanceID(serviceName)
-	if err := registry.Register(ctx, instanceID, serviceName, fmt.Sprintf("localhost:%d", port)); err != nil {
+	if err := registry.Register(ctx, instanceID, serviceName, fmt.Sprintf("localhost:%s", port)); err != nil {
 		panic(err)
 	}
 	go func() {

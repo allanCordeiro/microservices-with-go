@@ -2,10 +2,10 @@ package grpc
 
 import (
 	"context"
-	"github.com/allancordeiro/movieapp/gen"
-	"github.com/allancordeiro/movieapp/internal/grpcutil"
-	"github.com/allancordeiro/movieapp/pkg/discovery"
-	model "github.com/allancordeiro/movieapp/rating/pkg"
+	"github.com/allancordeiro/microservices-with-go/gen"
+	"github.com/allancordeiro/microservices-with-go/internal/grpcutil"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery"
+	model "github.com/allancordeiro/microservices-with-go/rating/pkg"
 )
 
 // Gateway define an GRPC gateway for a rating service

@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/allancordeiro/movieapp/rating/internal/controller/rating"
-	model "github.com/allancordeiro/movieapp/rating/pkg"
+	"github.com/allancordeiro/microservices-with-go/rating/internal/controller/rating"
+	model "github.com/allancordeiro/microservices-with-go/rating/pkg"
 )
 
 // Handler defines a rating service controller

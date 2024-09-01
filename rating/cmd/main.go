@@ -2,28 +2,35 @@ package main
 
 import (
 	"context"
-	"flag"
 	"fmt"
-	"github.com/allancordeiro/movieapp/gen"
+	"github.com/allancordeiro/microservices-with-go/gen"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
+	"gopkg.in/yaml.v3"
 	"log"
 	"net"
+	"os"
 	"time"
 
-	"github.com/allancordeiro/movieapp/pkg/discovery"
-	"github.com/allancordeiro/movieapp/pkg/discovery/consul"
-	"github.com/allancordeiro/movieapp/rating/internal/controller/rating"
-	grpchandler "github.com/allancordeiro/movieapp/rating/internal/handler/grpc"
-	"github.com/allancordeiro/movieapp/rating/internal/repository/mysql"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery/consul"
+	"github.com/allancordeiro/microservices-with-go/rating/internal/controller/rating"
+	grpchandler "github.com/allancordeiro/microservices-with-go/rating/internal/handler/grpc"
+	"github.com/allancordeiro/microservices-with-go/rating/internal/repository/mysql"
 )
 
 const serviceName = "rating"
 
 func main() {
-	var port int
-	flag.IntVar(&port, "port", 8082, "API handler port")
-	flag.Parse()
+	f, err := os.Open("configs/base.yaml")
+	if err != nil {
+		panic(err)
+	}
+	var cfg config
+	if err := yaml.NewDecoder(f).Decode(&cfg); err != nil {
+		panic(err)
+	}
+	port := cfg.APIConfig.Port
 
 	log.Printf("starting the rating service on port %d\n", port)
 	registry, err := consul.NewRegistry("localhost:8500")

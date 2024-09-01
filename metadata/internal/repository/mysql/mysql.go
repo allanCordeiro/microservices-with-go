@@ -4,8 +4,8 @@ import (
 	"context"
 	"database/sql"
 	"errors"
-	"github.com/allancordeiro/movieapp/metadata/internal/repository"
-	model "github.com/allancordeiro/movieapp/metadata/pkg"
+	"github.com/allancordeiro/microservices-with-go/metadata/internal/repository"
+	model "github.com/allancordeiro/microservices-with-go/metadata/pkg"
 	_ "github.com/go-sql-driver/mysql"
 )
 

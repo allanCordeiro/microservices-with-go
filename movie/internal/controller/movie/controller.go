@@ -4,10 +4,10 @@ import (
 	"context"
 	"errors"
 
-	metadatamodel "github.com/allancordeiro/movieapp/metadata/pkg"
-	"github.com/allancordeiro/movieapp/movie/internal/gateway"
-	model "github.com/allancordeiro/movieapp/movie/pkg"
-	ratingmodel "github.com/allancordeiro/movieapp/rating/pkg"
+	metadatamodel "github.com/allancordeiro/microservices-with-go/metadata/pkg"
+	"github.com/allancordeiro/microservices-with-go/movie/internal/gateway"
+	model "github.com/allancordeiro/microservices-with-go/movie/pkg"
+	ratingmodel "github.com/allancordeiro/microservices-with-go/rating/pkg"
 )
 
 // ErrNotFound is returned when the movie metadata is not found

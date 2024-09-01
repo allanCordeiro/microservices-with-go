@@ -3,8 +3,8 @@ package mysql
 import (
 	"context"
 	"database/sql"
-	"github.com/allancordeiro/movieapp/rating/internal/repository"
-	model "github.com/allancordeiro/movieapp/rating/pkg"
+	"github.com/allancordeiro/microservices-with-go/rating/internal/repository"
+	model "github.com/allancordeiro/microservices-with-go/rating/pkg"
 	_ "github.com/go-sql-driver/mysql"
 )
 

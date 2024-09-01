@@ -2,7 +2,7 @@ package grpcutil
 
 import (
 	"context"
-	"github.com/allancordeiro/movieapp/pkg/discovery"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"math/rand"

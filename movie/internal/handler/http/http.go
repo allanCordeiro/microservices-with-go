@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/allancordeiro/movieapp/movie/internal/controller/movie"
+	"github.com/allancordeiro/microservices-with-go/movie/internal/controller/movie"
 )
 
 // Handler defines a movide handler

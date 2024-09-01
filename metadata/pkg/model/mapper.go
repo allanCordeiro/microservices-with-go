@@ -1,8 +1,8 @@
 package model
 
 import (
-	"github.com/allancordeiro/movieapp/gen"
-	model "github.com/allancordeiro/movieapp/metadata/pkg"
+	"github.com/allancordeiro/microservices-with-go/gen"
+	model "github.com/allancordeiro/microservices-with-go/metadata/pkg"
 )
 
 // MetadataToProto converts a Metadata struct into a generated proto counterpart.

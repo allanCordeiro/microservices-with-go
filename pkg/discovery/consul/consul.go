@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/allancordeiro/movieapp/pkg/discovery"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery"
 	consul "github.com/hashicorp/consul/api"
 )
 

@@ -3,9 +3,9 @@ package grpc
 import (
 	"context"
 	"errors"
-	"github.com/allancordeiro/movieapp/gen"
-	"github.com/allancordeiro/movieapp/metadata/internal/controller/metadata"
-	"github.com/allancordeiro/movieapp/metadata/pkg/model"
+	"github.com/allancordeiro/microservices-with-go/gen"
+	"github.com/allancordeiro/microservices-with-go/metadata/internal/controller/metadata"
+	"github.com/allancordeiro/microservices-with-go/metadata/pkg/model"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

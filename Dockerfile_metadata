@@ -1,0 +1,21 @@
+FROM golang:1.22.3 AS builder
+
+
+ENV GOPROXY=https://goproxy.io,direct
+
+WORKDIR /usr/src/app
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
+
+COPY ./metadata/ ./metadata/
+RUN chmod -R 777 /usr/src/app/metadata
+
+RUN go get github.com/allancordeiro/microservices-with-go/pkg/discovery
+RUN GOOS=linux GOARCH=amd64 go build -o metadata ./metadata/cmd/*.go
+
+
+FROM scratch
+COPY --from=builder /metadata /metadata
+
+EXPOSE 8081
+ENTRYPOINT [ "/metadata" ]

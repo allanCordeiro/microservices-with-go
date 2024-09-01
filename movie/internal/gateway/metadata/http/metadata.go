@@ -8,9 +8,9 @@ import (
 	"math/rand"
 	"net/http"
 
-	model "github.com/allancordeiro/movieapp/metadata/pkg"
-	"github.com/allancordeiro/movieapp/movie/internal/gateway"
-	"github.com/allancordeiro/movieapp/pkg/discovery"
+	model "github.com/allancordeiro/microservices-with-go/metadata/pkg"
+	"github.com/allancordeiro/microservices-with-go/movie/internal/gateway"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery"
 )
 
 // Gateway defines a movie metadata HTTP gateway

@@ -8,9 +8,9 @@ import (
 	"math/rand"
 	"net/http"
 
-	"github.com/allancordeiro/movieapp/movie/internal/gateway"
-	"github.com/allancordeiro/movieapp/pkg/discovery"
-	model "github.com/allancordeiro/movieapp/rating/pkg"
+	"github.com/allancordeiro/microservices-with-go/movie/internal/gateway"
+	"github.com/allancordeiro/microservices-with-go/pkg/discovery"
+	model "github.com/allancordeiro/microservices-with-go/rating/pkg"
 )
 
 // Gateway defines an HTTP gateway for a rating service
