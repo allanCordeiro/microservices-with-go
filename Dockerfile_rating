@@ -9,12 +9,12 @@ RUN go mod download && go mod verify
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /usr/src/app/service ./metadata/cmd/*.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /usr/src/app/service ./rating/cmd/*.go
 
 
 FROM scratch
 COPY --from=builder /usr/src/app/service /service
 COPY --from=builder /usr/src/app/metadata/configs/base.yaml /configs/base.yaml
 
-EXPOSE 8081
+EXPOSE 8082
 ENTRYPOINT [ "/service" ]
